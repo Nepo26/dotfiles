@@ -26,4 +26,30 @@ set ruler	" Show row and column ruler information
 set undolevels=1000	" Number of undo levels
 set backspace=indent,eol,start	" Backspace behaviour
  
- 
+" Plugins
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+
+" Install vim-plug if not found
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
+
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+Plug 'leafgarland/typescript-vim'
+
+call plug#end()
+
+
+
+" Typescript indent config
+setlocal indentkeys+=0.

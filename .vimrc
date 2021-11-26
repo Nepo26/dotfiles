@@ -36,9 +36,7 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 " Run PlugInstall if there are missing plugins
-autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \| PlugInstall --sync | source $MYVIMRC
-\| endif
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))  | PlugInstall --sync | source $MYVIMRC | endif
 
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'

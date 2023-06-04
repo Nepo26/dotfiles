@@ -20,6 +20,7 @@ $gradle\
 $terraform\
 $sudo\
 $container\
+$localip\
 [](fg:second_box bg:last_box)\
 $time\
 [ ](fg:last_box)\

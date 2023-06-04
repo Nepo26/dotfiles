@@ -12,6 +12,14 @@ $rust\
 $golang\
 $php\
 $aws\
+$hostname\
+$package\
+$java\
+$kotlin\
+$gradle\
+$terraform\
+$sudo\
+$container\
 [](fg:second_box bg:last_box)\
 $time\
 [ ](fg:last_box)\

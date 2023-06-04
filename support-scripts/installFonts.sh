@@ -6,7 +6,7 @@ install_fonts_from_folder() {
 
   local originFolder=$1
 
-  for font in $originFolder;do
+  for font in $originFolder/*; do
     fun_log "Installing font '$font' on '~/.fonts'"
 
     local tempFolder=$(mktemp -d)

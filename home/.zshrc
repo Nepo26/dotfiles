@@ -114,7 +114,7 @@ source $ZSH/oh-my-zsh.sh
 #  ┬  ┬┌─┐┬─┐┌─┐
 #  └┐┌┘├─┤├┬┘└─┐
 #   └┘ ┴ ┴┴└─└─┘
-export VISUAL='geany'
+export VISUAL='code'
 export EDITOR='vim'
 export TERMINAL='alacritty'
 export BROWSER='firefox-trunk'

@@ -43,9 +43,13 @@ source $DOTFILES_LOCATION/support-scripts/installFonts.sh
 
 
 #################### --------------- Link Dotfiles Location to general default locations --------------- ####################
-
+fun_log "Copying tmux conf"
 cp "$DOTFILES_LOCATION/home/$TMUX_CONF" ~/$TMUX_CONF
+
+fun_log "Copying vim conf"
 cp "$DOTFILES_LOCATION/home/$VIM_CONF" ~/$VIM_CONF
+
+fun_log "Copying zsh conf"
 cp "$DOTFILES_LOCATION/home/$ZSH_CONF" ~/$ZSH_CONF
 
 # Add extra config besides the default template on VIM
@@ -55,6 +59,7 @@ cat "$DOTFILES_LOCATION/home/$EXTRA_VIM_CONF" >> ~/$VIM_CONF
 
 #################### --------------- Copying MISC Files --------------- ####################
 # Binaries
+fun_log "Installing builtin binaries"
 copy_folder_to $DOTFILES_LOCATION/misc/bin ~/.local/bin
 
 # AsciiArt for colorscript

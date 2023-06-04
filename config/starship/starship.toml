@@ -1,0 +1,93 @@
+format =""" 
+[░▒▓](bg:start_bg)\
+[  $username ](bg:start_bg fg:start_fg)\
+[](bg:dir_bg fg:dir_fg)\
+$directory\
+[](fg:dir_bg bg:first_box)\
+$git_branch\
+$git_status\
+[](fg:first_box bg:second_box)\
+$nodejs\
+$rust\
+$golang\
+$php\
+$aws\
+[](fg:second_box bg:last_box)\
+$time\
+[ ](fg:last_box)\
+\n$character"""
+
+palette = "tokyo"
+
+[palettes.tokyo]
+start_bg = "#a3aed2"
+start_fg = "#090c0c"
+dir_bg = "#769ff0" # Light Blue
+dir_fg = "#a3aed2" # Light Blue
+first_box = "#394260" # Lighter Blue
+second_box = "#212736" # Light Blue
+last_box = "#1d2230" # Dark Blue
+
+[directory]
+style = "fg:#e3e5e5 bg:dir_bg"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙"
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[username]
+style_user = 'bg:start_bg white bold'
+style_root = 'bg:start_bg bold'
+format = '[$user](bg:start_bg)($style)'
+disabled = false
+show_always = true
+
+[git_branch]
+symbol = ""
+style = "bg:first_box"
+format = '[[ $symbol $branch ](fg:dir_bg bg:first_box)]($style)'
+
+[git_status]
+style = "bg:first_box"
+format = '[[($all_status$ahead_behind )](fg:dir_bg bg:first_box)]($style)'
+
+[kubernetes]
+symbol = "󱃾"
+style = "bg:second_box"
+format = '[[ $symbol ($user)($cluster in)$context ](fg:dir_bg bg:second_box)]($style)'
+disabled = false
+
+[nodejs]
+symbol = ""
+style = "bg:second_box"
+format = '[[ $symbol ($version) ](fg:dir_bg bg:second_box)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:second_box"
+format = '[[ $symbol ($version) ](fg:dir_bg bg:second_box)]($style)'
+
+[golang]
+symbol = "ﳑ"
+style = "bg:second_box"
+format = '[[ $symbol ($version) ](fg:dir_bg bg:second_box)]($style)'
+
+[aws]
+disabled = true
+symbol = "󰅟"
+style = "bg:second_box"
+format = '[[ $symbol ($profile) \[$region\] ](fg:dir_bg bg:second_box)]($style)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:last_box"
+format = '[[  $time ](fg:#a0a9cb bg:last_box)]($style)'
+
+
+

@@ -189,8 +189,8 @@ function dir_icon {
   fi
 }
 
-PS1='%B%F{green}%  %b %B%F{magenta}%n%f%b $(dir_icon) %B%F{red}%~%f%b${vcs_info_msg_0_} %(?.%B%F{green}.%F{red})%f%b '
-
+#PS1='%B%F{green}%b%b%B%F{magenta}%n%f%b $(dir_icon) %B%F{red}%~%f%b${vcs_info_msg_0_} %(?.%B%F{green}.%F{red})%f%b '
+eval "$(starship init zsh)"
 #  ┌─┐┬  ┬ ┬┌─┐┬┌┐┌┌─┐
 #  ├─┘│  │ ││ ┬││││└─┐
 #  ┴  ┴─┘└─┘└─┘┴┘└┘└─┘
@@ -223,8 +223,8 @@ fi
 alias ls='lsd -a --group-directories-first'
 alias ll='lsd -la --group-directories-first'
 alias k='kubectl'
-alias cat='bat'
-alias bathelp='bat --plain --language=help'
+alias cat='batcat'
+alias bathelp='batcat --plain --language=help'
 
 help() {
 	    "$@" --help 2>&1 | bathelp

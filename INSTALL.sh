@@ -23,6 +23,8 @@ ZSH_CONF=".zshrc"
 
 DEPENDENCIES=(
     colorscript
+    starship
+    fzf
     zsh
     bat
     krew
@@ -30,7 +32,12 @@ DEPENDENCIES=(
     lsd
 )
 
+
+
+
+
 #################### --------------- Source Scripts and Utils --------------- ####################
+
 
 ### Utils
 source $DOTFILES_LOCATION/support-scripts/utils/fun_log.sh
@@ -52,6 +59,10 @@ cp "$DOTFILES_LOCATION/home/$VIM_CONF" ~/$VIM_CONF
 fun_log "Copying zsh conf"
 cp "$DOTFILES_LOCATION/home/$ZSH_CONF" ~/$ZSH_CONF
 
+
+fun_log "Copying Starship conf"
+cp "$DOTFILES_LOCATION/config/starship/starship.toml" ~/.config/starship.toml
+
 # Add extra config besides the default template on VIM
 cat "$DOTFILES_LOCATION/home/$EXTRA_VIM_CONF" >> ~/$VIM_CONF
 
@@ -71,4 +82,9 @@ copy_folder_to $DOTFILES_LOCATION/misc/asciiart ~/.local/share/asciiart
 install_fonts_from_folder $DOTFILES_LOCATION/misc/fonts
 
 
+# INSTALL ZSH PLUGINS
+git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/joshskidmore/zsh-fzf-history-search ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-fzf-history-search
 

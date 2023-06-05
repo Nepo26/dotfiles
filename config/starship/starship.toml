@@ -102,5 +102,6 @@ time_format = "%R" # Hour:Minute Format
 style = "bg:last_box"
 format = '[[  $time ](fg:#a0a9cb bg:last_box)]($style)'
 
-
-
+[sudo]
+disabled = false
+style = "bg:last_box"

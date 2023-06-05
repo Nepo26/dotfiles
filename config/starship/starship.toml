@@ -7,6 +7,7 @@ $directory\
 $git_branch\
 $git_status\
 [](fg:first_box bg:second_box)\
+$kubernetes\
 $nodejs\
 $rust\
 $golang\
@@ -68,8 +69,11 @@ format = '[[($all_status$ahead_behind )](fg:dir_bg bg:first_box)]($style)'
 [kubernetes]
 symbol = "󱃾"
 style = "bg:second_box"
-format = '[[ $symbol ($user)($cluster in)$context ](fg:dir_bg bg:second_box)]($style)'
+format = '[[ $symbol $context ](fg:dir_bg bg:second_box)]($style)'
 disabled = false
+
+[kubernetes.user_aliases]
+'kubernetes-admin.*' = 'admin'
 
 [nodejs]
 symbol = ""

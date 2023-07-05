@@ -30,6 +30,7 @@ DEPENDENCIES=(
     krew
     kubectl
     lsd
+    nvim
 )
 
 
@@ -62,6 +63,14 @@ cp "$DOTFILES_LOCATION/home/$ZSH_CONF" ~/$ZSH_CONF
 
 fun_log "Copying Starship conf"
 cp "$DOTFILES_LOCATION/config/starship/starship.toml" ~/.config/starship.toml
+
+
+#fun_log "Copying Nvim init.lua"
+#mkdir -p ~/.config/nvim
+#cp "$DOTFILES_LOCATION/config/nvim/init.lua" ~/.config/nvim/init.lua
+mv ~/.config/nvim ~/.config/nvim.bak
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+rm -rf ~/.config/nvim/.git
 
 # Add extra config besides the default template on VIM
 cat "$DOTFILES_LOCATION/home/$EXTRA_VIM_CONF" >> ~/$VIM_CONF

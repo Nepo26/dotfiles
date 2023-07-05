@@ -223,7 +223,9 @@ fi
 alias ls='lsd -a --group-directories-first'
 alias ll='lsd -la --group-directories-first'
 alias k='kubectl'
-alias cat='batcat'
+#alias cat='batcat'
+alias cat='bat'
+alias vim='nvim'
 alias bathelp='batcat --plain --language=help'
 
 help() {
@@ -232,5 +234,6 @@ help() {
 #  ┌─┐┬ ┬┌┬┐┌─┐  ┌─┐┌┬┐┌─┐┬─┐┌┬┐
 #  ├─┤│ │ │ │ │  └─┐ │ ├─┤├┬┘ │ 
 #  ┴ ┴└─┘ ┴ └─┘  └─┘ ┴ ┴ ┴┴└─ ┴ 
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:~/.config/bspwm/scripts/:$PATH:/usr/local/go/bin:$HOME/go/bin"
+M2_HOME='/opt/apache-maven-3.9.2'
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:~/.config/bspwm/scripts/:$M2_HOME/bin:$PATH:/usr/local/go/bin:$HOME/go/bin"
 $HOME/.local/bin/colorscript -r

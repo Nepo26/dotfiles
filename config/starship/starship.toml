@@ -27,6 +27,11 @@ $time\
 [ ](fg:last_box)\
 \n$character"""
 
+right_format="""
+[](fg:last_box)\
+[ ](fg:last_box)\
+"""
+
 palette = "tokyo"
 
 [palettes.tokyo]
@@ -40,7 +45,8 @@ last_box = "#1d2230" # Dark Blue
 
 [directory]
 style = "fg:#e3e5e5 bg:dir_bg"
-format = "[ $path ]($style)"
+format = "[$read_only $path ]($style)"
+
 truncation_length = 3
 truncation_symbol = "…/"
 
